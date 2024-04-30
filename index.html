@@ -1,3 +1,10 @@
+let result = 0; let operator = ""; const resultEl =
+document.querySelector(".result"); resultEl.innerHTML = result; function
+onClickNumber(number) { if (resultEl.innerHTML.length >= 13) return; if
+(resultEl.innerHTML === "0") { resultEl.innerHTML = number; } else {
+resultEl.innerHTML += number; } } function onClickOperator(inputOperator) {
+result = +resultEl.innerHTML; resultEl.innerHTML = 0; operator = inputOperator;
+console.log(operator); }
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,27 +16,28 @@
   <body>
     <h1>Calculator</h1>
     <div class="calculator">
+      <div id="test"></div>
+      <div class="test"></div>
       <div class="result"></div>
       <div class="calculator-buttons">
         <button onclick="onClickNumber(1)">1</button>
         <button onclick="onClickNumber(2)">2</button>
         <button onclick="onClickNumber(3)">3</button>
-        <button onclick="onClickOperator()">+</button>
+        <button onclick="onClickOperator('+')">+</button>
         <button onclick="onClickNumber(4)">4</button>
         <button onclick="onClickNumber(5)">5</button>
         <button onclick="onClickNumber(6)">6</button>
-        <button>-</button>
+        <button onclick="onClickOperator('-')">-</button>
         <button onclick="onClickNumber(7)">7</button>
         <button onclick="onClickNumber(8)">8</button>
         <button onclick="onClickNumber(9)">9</button>
-        <button>x</button>
+        <button onclick="onClickOperator('*')">✕</button>
         <button>Enter</button>
         <button onclick="onClickNumber(0)">0</button>
         <button>Del</button>
-        <button>÷</button>
+        <button onclick="onClickOperator('/')">÷</button>
       </div>
     </div>
-
     <script src="main.js"></script>
   </body>
 </html>
